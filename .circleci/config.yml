@@ -19,7 +19,7 @@ jobs:
           - v1-dependencies-{{ checksum "pom.xml" }}
           - v1-dependencies-
       - run: mvn integration-test -Dgpg.skip -Dmaven.source.skip=true -Dmaven.javadoc.skip=true
-      - run: mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}
+      - run: mvn --batch-mode verify sonar:sonar -Dsonar.host.url=${SONAR_URL}  -Dgpg.skip -Dmaven.source.skip=true -Dmaven.javadoc.skip=true
 
   maven_build:
     <<: *default
